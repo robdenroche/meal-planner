@@ -1,0 +1,118 @@
+Lemon Pasta:
+  recipe: https://cooked.wiki/saved/e731647f-9e97-426a-aba4-5052f065f6c2
+  ingredients:
+    - lemon
+    - spaghetti
+    - heavy cream
+    - butter
+    - parmesan
+  effort: weeknight
+  protein: dairy
+  leftovers: TRUE
+  vegetarian: TRUE
+
+Poke Bowls:
+  ingredients:
+    - sushi salmon/tuna
+    - rice
+    - avocado
+    - sesame snacks
+    - edamame
+  effort: weeknight
+  protein: seafood
+  leftovers: FALSE
+  vegetarian: FALSE
+
+Pasta with Feta and Green Olives:
+  recipe: https://cooked.wiki/saved/66b22740-2020-4696-a19f-f9e47799f420
+  ingredients:
+    - orecchiette
+    - green olives (castelvetrano)
+    - garlic
+    - lemon
+    - feta
+  effort: weeknight
+  protein: dairy
+  leftovers: TRUE
+  vegetarian: TRUE
+
+Olive Oil-braised Chickpeas:
+  recipe: https://cooked.wiki/saved/3a7bc456-63b0-48bd-b974-fb0c11a37b07
+  ingredients:
+    - onion
+    - chickpeas
+    - capers
+    - thyme
+    - green olives (castelvetrano)
+    - lemon
+    - feta
+    - baugette
+  effort: weeknight
+  protein: legume
+  leftovers: TRUE
+  vegetarian: TRUE
+
+Rob's Burritos:
+  recipe: https://cooked.wiki/saved/c912f405-b523-42bc-9213-5e466c020ee4
+  ingredients:
+    - ground beef/chicken/turkey
+    - green onion
+    - bell pepper
+    - mushrooms
+    - black beans
+    - spinach
+  effort: weeknight
+  protein: beef/poultry
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Salmon and Bok Choy:
+  recipe: https://cooked.wiki/saved/d60297ca-48b2-4a5d-86b4-564fd49fad3b
+  ingredients:
+    - salmon
+    - coconut milk
+    - green curry paste
+    - ginger
+    - garlic
+    - bok choy
+    - lime
+    - green onion
+    - cilantro (optional)
+    - cashews/peanuts (optional)
+  effort: weeknight
+  protein: seafood
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Perogies:
+  recipe: NULL
+  ingredients:
+    - perogies
+    - onion
+    - bacon (optional)
+    - green onion (optional)
+  effort: weeknight
+  protein: dairy
+  leftovers: TRUE
+  vegetarian: TRUE
+
+Chicken Caesar:
+  recipe: https://cooked.wiki/saved/85502050-c034-47a3-8d09-653f7b6e93e7
+  ingredients:
+    - chicken (grilled or tendy)
+    - romaine
+    - mayo
+    - dijon
+    - garlic
+    - parmesan
+    - croutons
+    - tortillas (optional)
+    - bacon (optional)
+  effort: weeknight
+  protein: poultry
+  leftovers: TRUE
+  vegetarian: FALSE
+
+
+
+

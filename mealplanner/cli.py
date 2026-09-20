@@ -49,7 +49,7 @@ def main(argv: list[str] | None = None) -> None:
         "--exclude-protein", action="append", default=[], help="Repeatable."
     )
     parser.add_argument("--effort", action="append", default=None, help="Repeatable.")
-    parser.add_argument("--vegetarian-only", action="store_true")
+    parser.add_argument("--min-vegetarian", type=int, default=0)
     parser.add_argument("--leftovers-only", action="store_true")
     parser.add_argument("--seed", type=int, default=None)
     args = parser.parse_args(argv)
@@ -60,7 +60,7 @@ def main(argv: list[str] | None = None) -> None:
         include_proteins=set(args.include_protein) if args.include_protein else None,
         exclude_proteins=set(args.exclude_protein),
         efforts=set(args.effort) if args.effort else None,
-        vegetarian_only=args.vegetarian_only,
+        min_vegetarian=args.min_vegetarian,
         leftovers_only=args.leftovers_only,
     )
     rng = random.Random(args.seed)

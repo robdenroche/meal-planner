@@ -1,0 +1,88 @@
+:root {
+  color-scheme: light dark;
+  --gap: 0.75rem;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+fieldset {
+  border: 1px solid #8883;
+  border-radius: 6px;
+  margin: var(--gap) 0;
+}
+
+fieldset label {
+  display: inline-block;
+  margin: 0.25rem 0.75rem 0.25rem 0;
+}
+
+#config-form > label {
+  display: block;
+  margin: var(--gap) 0;
+}
+
+.view[hidden] {
+  display: none;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: var(--gap);
+  margin-top: 1rem;
+}
+
+.error {
+  color: #c0392b;
+  min-height: 1.2em;
+}
+
+#meal-list, #shopping-list {
+  list-style: none;
+  padding: 0;
+}
+
+.meal-card {
+  border: 1px solid #8883;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: var(--gap);
+}
+
+.meal-card h3 {
+  margin: 0 0 0.25rem;
+}
+
+.meal-card .tags {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
+}
+
+.meal-card .ingredients {
+  font-size: 0.9rem;
+}
+
+.meal-card button {
+  margin-top: 0.5rem;
+}
+
+#shopping-list li {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #8882;
+}

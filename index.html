@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meal Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Meal Planner</h1>
+    <p id="status">Loading Python runtime…</p>
+  </header>
+
+  <main>
+    <!-- Step 1: configuration -->
+    <section id="config-view" class="view" hidden>
+      <h2>Plan your week</h2>
+      <form id="config-form">
+        <label>
+          Number of meals
+          <input type="number" id="num-meals" min="1" max="14" value="5" required />
+        </label>
+
+        <fieldset id="effort-fieldset">
+          <legend>Effort level (leave all unchecked for any)</legend>
+        </fieldset>
+
+        <fieldset id="include-protein-fieldset">
+          <legend>Only include these proteins (leave all unchecked for any)</legend>
+        </fieldset>
+
+        <fieldset id="exclude-protein-fieldset">
+          <legend>Exclude these proteins</legend>
+        </fieldset>
+
+        <label>
+          Minimum vegetarian meals
+          <input type="number" id="min-vegetarian" min="0" value="0" />
+        </label>
+        <label>
+          <input type="checkbox" id="leftovers-only" /> Must have leftovers
+        </label>
+
+        <button type="submit">Generate week</button>
+      </form>
+      <p id="config-error" class="error"></p>
+    </section>
+
+    <!-- Step 2: review + reroll -->
+    <section id="week-view" class="view" hidden>
+      <h2>This week's meals</h2>
+      <ul id="meal-list"></ul>
+      <p id="week-error" class="error"></p>
+      <div class="actions">
+        <button id="back-to-config">Change criteria</button>
+        <button id="lock-in">Lock in week</button>
+      </div>
+    </section>
+
+    <!-- Step 3: shopping list -->
+    <section id="shopping-view" class="view" hidden>
+      <h2>Shopping list</h2>
+      <ul id="shopping-list"></ul>
+      <div class="actions">
+        <button id="start-over">Start a new week</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

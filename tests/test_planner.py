@@ -13,9 +13,16 @@ def meals():
     return load_meals(SAMPLE_YAML)
 
 
-def test_filter_meals_vegetarian_only(meals):
-    result = filter_meals(meals, Config(vegetarian_only=True))
-    assert [m.name for m in result] == ["Veggie Bowl"]
+def test_select_week_respects_min_vegetarian(meals):
+    selection = select_week(
+        meals, Config(num_meals=2, min_vegetarian=1), rng=random.Random(0)
+    )
+    assert any(m.vegetarian for m in selection)
+
+
+def test_select_week_raises_when_not_enough_vegetarian(meals):
+    with pytest.raises(ValueError):
+        select_week(meals, Config(num_meals=2, min_vegetarian=2), rng=random.Random(0))
 
 
 def test_filter_meals_exclude_proteins(meals):
@@ -54,3 +61,42 @@ def test_reroll_meal_raises_when_no_alternatives(meals):
             index=0,
             rng=random.Random(0),
         )
+
+
+def test_reroll_meal_keeps_min_vegetarian_when_at_the_minimum(meals):
+    # meals[1] ("Veggie Bowl") is the only vegetarian meal in the fixture, so
+    # rerolling it while min_vegetarian=1 has no legal alternative.
+    selection = [meals[0], meals[1]]
+    with pytest.raises(ValueError):
+        reroll_meal(
+            meals,
+            Config(num_meals=2, min_vegetarian=1),
+            selection,
+            index=1,
+            rng=random.Random(0),
+        )
+
+
+def test_reroll_meal_picks_another_vegetarian_meal_to_keep_minimum():
+    extra_yaml = SAMPLE_YAML + """
+Veggie Chili:
+  ingredients:
+    - beans
+    - tomatoes
+    - onion
+  effort: weeknight
+  protein: legume
+  leftovers: TRUE
+  vegetarian: TRUE
+"""
+    meals = load_meals(extra_yaml)
+    tacos, veggie_bowl, veggie_chili = meals
+    selection = [tacos, veggie_bowl]
+    rerolled = reroll_meal(
+        meals,
+        Config(num_meals=2, min_vegetarian=1),
+        selection,
+        index=1,
+        rng=random.Random(0),
+    )
+    assert rerolled[1].name == "Veggie Chili"

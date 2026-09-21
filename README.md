@@ -52,6 +52,9 @@ Then visit http://localhost:8000/.
 
 ### Hosting on GitHub Pages
 
+The root `.nojekyll` file is required so GitHub Pages serves Python files with
+underscore-prefixed names, such as `mealplanner/__init__.py`.
+
 1. In the repo settings, under **Pages**, set the source to the `main` branch,
    root folder (`/`).
 2. Push to `main`. The site will be published at

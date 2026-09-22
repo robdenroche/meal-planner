@@ -52,17 +52,31 @@ Olive Oil-braised Chickpeas:
   leftovers: TRUE
   vegetarian: TRUE
 
-Rob's Burritos:
+Beef Burritos:
   recipe: https://cooked.wiki/saved/c912f405-b523-42bc-9213-5e466c020ee4
   ingredients:
-    - ground beef/chicken/turkey
+    - ground beef
     - green onion
     - bell pepper
     - mushrooms
     - black beans
     - spinach
   effort: weeknight
-  protein: beef/poultry
+  protein: beef
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Turkey Burritos:
+  recipe: https://cooked.wiki/saved/c912f405-b523-42bc-9213-5e466c020ee4
+  ingredients:
+    - ground turkey
+    - green onion
+    - bell pepper
+    - mushrooms
+    - black beans
+    - spinach
+  effort: weeknight
+  protein: poultry
   leftovers: TRUE
   vegetarian: FALSE
 
@@ -113,6 +127,49 @@ Chicken Caesar:
   leftovers: TRUE
   vegetarian: FALSE
 
+Lemony Chicken and Orzo Soup:
+  recipe: https://cooked.wiki/saved/66d6b6c6-6493-42e4-a4a2-cbce700561b3
+  ingredients:
+    - chicken thighs
+    - leek
+    - celery
+    - chicken broth
+    - orzo
+    - dill
+    - lemon
+  effort: weeknight
+  protein: poultry
+  leftovers: TRUE
+  vegetarian: FALSE
 
+Grilled Chicken Salad with Romesco Sauce:
+  recipe: https://cooked.wiki/saved/14422291-1ffe-43be-833e-a926ef001aaa
+  ingredients:
+    - chicken thighs
+    - red wine vinegar
+    - garlic
+    - roasted red pepper
+    - almond butter
+    - lettuce
+    - cucumber
+    - parsley
+    - lemon
+    - red onion
+  effort: weeknight
+  protein: poultry
+  leftovers: TRUE
+  vegetarian: FALSE
 
-
+Ramen Noodles with Miso Pesto:
+  recipe: https://cooked.wiki/saved/f3fbe075-8fdf-4190-8170-dce02391a5c7
+  ingredients:
+    - baby spinach
+    - cilantro
+    - miso
+    - lemon
+    - ramen noodles
+  effort: weeknight
+  protein: legume
+  leftovers: TRUE
+  vegetarian: TRUE
+  

@@ -5,6 +5,9 @@ Tacos:
     - tortillas
     - ground beef
     - cheese
+  pantry:
+    - cumin
+    - salt
   effort: weeknight
   protein: beef/poultry
   leftovers: TRUE
@@ -15,6 +18,8 @@ Veggie Bowl:
     - rice
     - beans
     - cheese
+  pantry:
+    - olive oil
   effort: weeknight
   protein: legume
   leftovers: FALSE

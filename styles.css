@@ -52,7 +52,7 @@ button {
   min-height: 1.2em;
 }
 
-#meal-list, #shopping-list {
+#meal-list {
   list-style: none;
   padding: 0;
 }
@@ -82,7 +82,33 @@ button {
   margin-top: 0.5rem;
 }
 
-#shopping-list li {
+#shopping-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.shopping-section h3 {
+  margin: 0 0 0.75rem;
+  text-transform: capitalize;
+}
+
+.shopping-recipe {
+  border: 1px solid #8883;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.shopping-recipe h4 {
+  margin: 0 0 0.5rem;
+}
+
+.shopping-recipe ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.shopping-recipe li {
   padding: 0.25rem 0;
   border-bottom: 1px solid #8882;
 }

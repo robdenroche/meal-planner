@@ -11,6 +11,7 @@ import yaml
 class Meal:
     name: str
     ingredients: list[str] = field(default_factory=list)
+    pantry: list[str] = field(default_factory=list)
     effort: str | None = None
     protein: str | None = None
     leftovers: bool = False
@@ -28,6 +29,7 @@ def load_meals(yaml_text: str) -> list[Meal]:
             Meal(
                 name=name,
                 ingredients=list(attrs.get("ingredients") or []),
+                pantry=list(attrs.get("pantry") or []),
                 effort=attrs.get("effort"),
                 protein=attrs.get("protein"),
                 leftovers=bool(attrs.get("leftovers", False)),

@@ -45,7 +45,7 @@ sys.path.insert(0, "/home/pyodide")
 
 from mealplanner.models import load_meals
 from mealplanner.planner import Config, select_week, reroll_meal
-from mealplanner.shopping_list import build_shopping_list
+from mealplanner.shopping_list import build_grouped_shopping_list
 
 meals = load_meals(mains_yaml_text)
 _selection = []
@@ -55,6 +55,7 @@ def _meal_to_dict(m):
     return {
         "name": m.name,
         "ingredients": m.ingredients,
+        "pantry": m.pantry,
         "effort": m.effort,
         "protein": m.protein,
         "leftovers": m.leftovers,
@@ -99,7 +100,7 @@ def reroll(config_json, index):
 
 
 def shopping_list_json():
-    return json.dumps(build_shopping_list(_selection))
+    return json.dumps(build_grouped_shopping_list(_selection))
 `);
 }
 
@@ -187,13 +188,36 @@ async function handleReroll(index) {
 }
 
 function renderShoppingList() {
-  const items = JSON.parse(pyShoppingList());
-  const list = document.getElementById("shopping-list");
-  list.innerHTML = "";
-  for (const item of items) {
-    const li = document.createElement("li");
-    li.textContent = `${item.ingredient} (${item.meals.join(", ")})`;
-    list.appendChild(li);
+  const sections = JSON.parse(pyShoppingList());
+  const container = document.getElementById("shopping-list");
+  container.innerHTML = "";
+  for (const section of sections) {
+    const sectionEl = document.createElement("section");
+    sectionEl.className = "shopping-section";
+
+    const heading = document.createElement("h3");
+    heading.textContent = section.section;
+    sectionEl.appendChild(heading);
+
+    for (const recipe of section.recipes) {
+      const group = document.createElement("div");
+      group.className = "shopping-recipe";
+
+      const recipeHeading = document.createElement("h4");
+      recipeHeading.textContent = recipe.recipe;
+      group.appendChild(recipeHeading);
+
+      const list = document.createElement("ul");
+      for (const item of recipe.items) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+      }
+      group.appendChild(list);
+      sectionEl.appendChild(group);
+    }
+
+    container.appendChild(sectionEl);
   }
 }
 

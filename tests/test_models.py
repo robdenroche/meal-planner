@@ -1,4 +1,4 @@
-from mealplanner.models import Meal, load_meals
+from mealplanner.models import load_meals
 
 from .fixtures import SAMPLE_YAML
 
@@ -10,6 +10,7 @@ def test_load_meals_parses_fields():
     tacos = next(m for m in meals if m.name == "Tacos")
     assert tacos.recipe is None
     assert tacos.ingredients == ["tortillas", "ground beef", "cheese"]
+    assert tacos.pantry == ["cumin", "salt"]
     assert tacos.effort == "weeknight"
     assert tacos.protein == "beef/poultry"
     assert tacos.leftovers is True
@@ -24,3 +25,4 @@ def test_load_meals_defaults_missing_fields():
     assert meal.leftovers is False
     assert meal.vegetarian is False
     assert meal.recipe is None
+    assert meal.pantry == []

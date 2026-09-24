@@ -4,20 +4,27 @@ Lemon Pasta:
     - lemon
     - spaghetti
     - heavy cream
+  pantry:
     - butter
     - parmesan
+    - black pepper
+    - salt
   effort: weeknight
   protein: dairy
   leftovers: TRUE
   vegetarian: TRUE
 
 Poke Bowls:
+  recipe: NULL
   ingredients:
     - sushi salmon/tuna
-    - rice
     - avocado
-    - sesame snacks
+    - seaweed
     - edamame
+    - cucumber
+  pantry:
+    - rice
+    - sesame seeds
   effort: weeknight
   protein: seafood
   leftovers: FALSE
@@ -31,6 +38,10 @@ Pasta with Feta and Green Olives:
     - garlic
     - lemon
     - feta
+  pantry:
+    - salt
+    - black pepper
+    - olive oil
   effort: weeknight
   protein: dairy
   leftovers: TRUE
@@ -47,6 +58,11 @@ Olive Oil-braised Chickpeas:
     - lemon
     - feta
     - baugette
+  pantry:
+    - olive oil
+    - salt
+    - black pepper
+    - smoked paprika
   effort: weeknight
   protein: legume
   leftovers: TRUE
@@ -61,6 +77,15 @@ Beef Burritos:
     - mushrooms
     - black beans
     - spinach
+  pantry:
+    - olive oil
+    - corn starch
+    - cumin
+    - coriander
+    - garlic powder
+    - salt
+    - black pepper
+    - pickled jalapenos
   effort: weeknight
   protein: beef
   leftovers: TRUE
@@ -75,6 +100,16 @@ Turkey Burritos:
     - mushrooms
     - black beans
     - spinach
+  pantry:
+    - olive oil
+    - corn starch
+    - cumin
+    - coriander
+    - garlic powder
+    - cinnamon
+    - salt
+    - black pepper
+    - pickled jalapenos
   effort: weeknight
   protein: poultry
   leftovers: TRUE
@@ -93,6 +128,8 @@ Salmon and Bok Choy:
     - green onion
     - cilantro (optional)
     - cashews/peanuts (optional)
+  pantry:
+    - rice
   effort: weeknight
   protein: seafood
   leftovers: TRUE
@@ -105,6 +142,7 @@ Perogies:
     - onion
     - bacon (optional)
     - green onion (optional)
+    - sour cream (optional)
   effort: weeknight
   protein: dairy
   leftovers: TRUE
@@ -115,13 +153,18 @@ Chicken Caesar:
   ingredients:
     - chicken (grilled or tendy)
     - romaine
-    - mayo
-    - dijon
+    - lemon
     - garlic
-    - parmesan
-    - croutons
     - tortillas (optional)
     - bacon (optional)
+  pantry:
+    - oil
+    - salt
+    - black pepper
+    - dijon
+    - mayo
+    - parmesan
+    - croutons
   effort: weeknight
   protein: poultry
   leftovers: TRUE
@@ -137,6 +180,10 @@ Lemony Chicken and Orzo Soup:
     - orzo
     - dill
     - lemon
+  pantry:
+    - olive oil
+    - salt
+    - black pepper
   effort: weeknight
   protein: poultry
   leftovers: TRUE
@@ -146,7 +193,6 @@ Grilled Chicken Salad with Romesco Sauce:
   recipe: https://cooked.wiki/saved/14422291-1ffe-43be-833e-a926ef001aaa
   ingredients:
     - chicken thighs
-    - red wine vinegar
     - garlic
     - roasted red pepper
     - almond butter
@@ -155,6 +201,14 @@ Grilled Chicken Salad with Romesco Sauce:
     - parsley
     - lemon
     - red onion
+  pantry:
+    - salt
+    - black pepper
+    - red wine vinegar
+    - vegetable oil
+    - olive oil
+    - cayenne pepper
+    - paprika
   effort: weeknight
   protein: poultry
   leftovers: TRUE
@@ -166,10 +220,183 @@ Ramen Noodles with Miso Pesto:
     - baby spinach
     - cilantro
     - miso
+    - garlic
     - lemon
     - ramen noodles
+  pantry:
+    - sesame oil
+    - vegetable oil
+    - salt
+    - butter
+    - sesame seeds
   effort: weeknight
   protein: legume
   leftovers: TRUE
   vegetarian: TRUE
-  
+
+Basil-cashew-lime Vermicelli Bowls with Pork and Green Beans:
+  recipe: https://cooked.wiki/saved/a9e7875b-e5bf-42a0-9477-77af023f5afb
+  ingredients:
+    - cashews
+    - pork tenderloin
+    - rice noodles
+    - basil
+    - lime
+    - green beans
+    - mint (optional)
+  pantry:
+    - tumeric
+    - black pepper
+    - salt
+    - brown sugar
+    - vegetable oil
+  effort: weeknight
+  protein: pork
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Spiced Salmon Kebabs:
+  recipe: https://cooked.wiki/saved/133afa14-dfd3-404f-9449-98f980284a26
+  ingredients:
+    - salmon
+    - lemons
+    - skewers
+  pantry:
+    - oregano
+    - sesame seeds
+    - cumin
+    - salt
+    - red pepper flakes
+    - black pepper
+    - olive oil
+  effort: weeknight
+  protein: seafood
+  leftovers: TRUE
+  vegetarian: FALSE  
+
+Panang Curry:
+  recipe: https://cooked.wiki/saved/8ce42c60-e0f2-42f9-8c05-30adf38c31c9
+  ingredients:
+    - peanuts
+    - red curry paste
+    - chicken
+    - coconut milk
+    - lime
+    - bell pepper
+    - thai basil
+  pantry:
+    - coriander
+    - cumin
+    - fish sauce
+    - brown sugar
+    - rice
+  effort: weeknight
+  protein: poultry
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Spicy Black Bean and Corn Tacos:
+  recipe: https://cooked.wiki/saved/692f77b8-91f3-45bf-944b-1ce87cb931f2
+  ingredients:
+    - hazelnuts
+    - pumpkin seeds
+    - corn
+    - cilantro
+    - lime
+    - red onion
+    - black beans
+    - tortillas
+    - avocado (optional)
+  pantry:
+    - red pepper flakes
+    - olive oil
+    - salt
+    - pickled jalapenos
+  effort: weeknight
+  protein: legume
+  leftovers: TRUE
+  vegetarian: TRUE
+
+Italian Sausage with Grilled Broccolini, Kale, and Lemon:
+  recipe: https://cooked.wiki/saved/2d1ae8fd-5c19-41f7-b67e-520e071169b9
+  ingredients:
+    - almonds
+    - lemon
+    - capers
+    - broccolini
+    - kale
+    - italian sausage
+    - parmesan
+  pantry:
+   - olive oil
+   - honey
+   - salt
+   - black pepper
+  effort: weeknight
+  protein: pork
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Easy General Tso's Chicken:
+  recipe: https://cooked.wiki/saved/44819519-827e-414c-a140-4ee8b41ddd42
+  ingredients:
+    - green beans
+    - chicken
+    - garlic
+    - ginger
+    - green onion
+  pantry:
+    - vegetable oil
+    - salt
+    - black pepper
+    - cornstarch
+    - honey
+    - soy sauce
+    - rice vinegar
+    - sriracha
+    - tomato paste
+    - crushed red pepper
+  effort: project
+  protein: chicken
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Pork Tenderloin with Date and Cilantro Relish:
+  recipe: https://cooked.wiki/saved/c0a7fa55-d2d1-4276-87ee-118305b6f1c3
+  ingredients:
+    - pork tenderloin
+    - medjool dates
+    - orange juice
+    - cilantro
+  pantry:
+    - olive oil
+    - salt
+    - black pepper
+  effort: weeknight
+  protein: pork
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Lemongrass Pork Patties with Vietnamese Dipping Sauce:
+  recipe: https://cooked.wiki/saved/bdd60777-e95a-48e2-ad9c-46f073810e4b
+  ingredients:
+    - ground pork
+    - garlic
+    - green onion
+    - lemongrass
+    - ginger
+    - boston lettuce
+    - herbs (mint/cilantro/thai basil)
+  pantry:
+    - fish sauce
+    - sugar
+    - black pepper
+    - salt
+    - rice vinegar
+    - crushed red pepper
+    - rice
+    - tumeric
+  effort: project
+  protein: pork
+  leftovers: TRUE
+  vegetarian: FALSE

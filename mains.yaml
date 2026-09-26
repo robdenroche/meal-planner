@@ -356,7 +356,7 @@ Easy General Tso's Chicken:
     - sriracha
     - tomato paste
     - crushed red pepper
-  effort: project
+  effort: weekend
   protein: chicken
   leftovers: TRUE
   vegetarian: FALSE
@@ -396,7 +396,135 @@ Lemongrass Pork Patties with Vietnamese Dipping Sauce:
     - crushed red pepper
     - rice
     - tumeric
-  effort: project
+  effort: weekend
   protein: pork
   leftovers: TRUE
   vegetarian: FALSE
+
+Lemon-roasted Salmon with Escarole, Asparagus, and Potatoes:
+  recipe: https://cooked.wiki/saved/923a261c-39d0-4834-b5b5-8e875f937460
+  ingredients:
+    - salmon
+    - lemon
+    - roasted red peppers
+    - little potatoes
+    - asparagus
+    - dill
+    - escarole (lettuce)
+    - feta
+  pantry:
+    - oregano
+    - salt
+    - black pepper
+    - olive oil
+    - honey
+  effort: weeknight
+  protein: seafood
+  leftovers: FALSE
+  vegetarian: TRUE
+
+Red Wine-braised Chicken with Chorizo and Chickpeas:
+  recipe: https://cooked.wiki/saved/333c8d83-4698-4b75-a6d7-b351b5b1a143
+  ingredients:
+    - golden raisins
+    - bone-in skin-on chicken thighs
+    - chorizo
+    - chickpeas
+    - orange
+    - onion
+    - chicken broth
+    - parsley
+  pantry:
+    - cumin
+    - smoked paprika
+    - salt
+    - cayenne
+    - olive oil
+    - dry red wine
+    - sherry vinegar
+  effort: weekend
+  protein: chicken
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Steak with Parmesan Butter, Balsamic Glaze, and Arugula:
+  recipe: https://cooked.wiki/saved/dda8645d-e127-462c-80da-cf3ea65945f8
+  ingredients:
+    - parmesan
+    - steak
+    - shallots
+    - arugula
+    - lemon
+  pantry:
+    - butter
+    - olive oil
+    - balsamic vinegar
+    - brown sugar
+  effort: weeknight
+  protein: beef
+  leftovers: FALSE
+  vegetarian: FALSE
+
+Lebanese Lamb Chops with Lemony Lettuce:
+  recipe: https://cooked.wiki/saved/b9df2542-5358-4d21-a801-b4f1812f627a
+  ingredients:
+    - lemon
+    - garlic
+    - baharat
+    - lamb chops
+    - bibb lettuce
+    - mint leaves
+  pantry:
+    - sugar
+    - olive oil
+  effort: weeknight
+  protein: lamb
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Black Beans and Rice Bowl with Chicken and Apple Salsa:
+  recipe: https://cooked.wiki/saved/9797b51e-55a0-4999-9c96-0dc18b376ab0
+  ingredients:
+    - granny smith apple
+    - cilantro
+    - red onion
+    - lime
+    - green bell pepper
+    - garlic
+    - chicken broth
+    - black beans
+    - rotisserie chicken
+  pantry:
+    - vegetable oil
+    - chili powder
+    - coriander
+    - cumin
+    - salt
+    - black pepper
+    - rice
+  effort: weekend
+  protein: chicken
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Lentil Soup with Spicy Italian Sausage:
+  recipe: https://cooked.wiki/saved/50c2043d-8008-4cb0-83bc-0b7cfe45a1bd
+  ingredients:
+    - hot italian sausage
+    - onion
+    - carrots
+    - parsnips
+    - celery
+    - chicken broth
+    - spinach
+  pantry:
+    - olive oil
+    - italian seasoning
+    - brown lentils
+  effort: weekend
+  protein: pork
+  leftovers: TRUE
+  vegetarian: FALSE
+
+
+

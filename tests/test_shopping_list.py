@@ -18,8 +18,10 @@ def test_build_shopping_list_merges_duplicate_ingredients():
     assert names == sorted(names, key=str.lower)
 
 
-def test_build_grouped_shopping_list_splits_ingredients_and_pantry_by_recipe():
+def test_build_grouped_shopping_list_combines_unique_pantry_items():
     meals = load_meals(SAMPLE_YAML)
+    tacos = next(meal for meal in meals if meal.name == "Tacos")
+    tacos.recipe = "https://example.com/tacos"
 
     shopping_list = build_grouped_shopping_list(meals)
 
@@ -29,19 +31,18 @@ def test_build_grouped_shopping_list_splits_ingredients_and_pantry_by_recipe():
             "recipes": [
                 {
                     "recipe": "Tacos",
+                    "recipe_url": "https://example.com/tacos",
                     "items": ["tortillas", "ground beef", "cheese"],
                 },
                 {
                     "recipe": "Veggie Bowl",
+                    "recipe_url": None,
                     "items": ["rice", "beans", "cheese"],
                 },
             ],
         },
         {
             "section": "pantry",
-            "recipes": [
-                {"recipe": "Tacos", "items": ["cumin", "salt"]},
-                {"recipe": "Veggie Bowl", "items": ["olive oil"]},
-            ],
+            "items": ["cumin", "olive oil", "salt"],
         },
     ]

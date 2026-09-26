@@ -18,13 +18,13 @@ def build_shopping_list(meals: list[Meal]) -> list[dict]:
 
 
 def build_grouped_shopping_list(meals: list[Meal]) -> list[dict]:
-    """Group ingredients and pantry items by recipe for display."""
+    """Group ingredients by recipe and combine pantry items for display."""
     return [
         {
             "section": "ingredients",
             "recipes": _recipes_for_field(meals, "ingredients"),
         },
-        {"section": "pantry", "recipes": _recipes_for_field(meals, "pantry")},
+        {"section": "pantry", "items": _unique_items(meals, "pantry")},
     ]
 
 
@@ -33,5 +33,17 @@ def _recipes_for_field(meals: list[Meal], field_name: str) -> list[dict]:
     for meal in meals:
         items = [item.strip() for item in getattr(meal, field_name) if item.strip()]
         if items:
-            recipes.append({"recipe": meal.name, "items": items})
+            recipes.append(
+                {"recipe": meal.name, "recipe_url": meal.recipe, "items": items}
+            )
     return recipes
+
+
+def _unique_items(meals: list[Meal], field_name: str) -> list[str]:
+    items = {}
+    for meal in meals:
+        for item in getattr(meal, field_name):
+            item = item.strip()
+            if item:
+                items.setdefault(item.lower(), item)
+    return sorted(items.values(), key=str.lower)

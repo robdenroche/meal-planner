@@ -20,6 +20,7 @@ Veggie Bowl:
     - cheese
   pantry:
     - olive oil
+    - cumin
   effort: weeknight
   protein: legume
   leftovers: FALSE

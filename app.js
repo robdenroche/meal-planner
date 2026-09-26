@@ -199,16 +199,28 @@ function renderShoppingList() {
     heading.textContent = section.section;
     sectionEl.appendChild(heading);
 
-    for (const recipe of section.recipes) {
+    const groups = section.recipes || [{ items: section.items }];
+    for (const groupData of groups) {
       const group = document.createElement("div");
       group.className = "shopping-recipe";
 
-      const recipeHeading = document.createElement("h4");
-      recipeHeading.textContent = recipe.recipe;
-      group.appendChild(recipeHeading);
+      if (groupData.recipe) {
+        const recipeHeading = document.createElement("h4");
+        if (groupData.recipe_url) {
+          const recipeLink = document.createElement("a");
+          recipeLink.href = groupData.recipe_url;
+          recipeLink.target = "_blank";
+          recipeLink.rel = "noopener";
+          recipeLink.textContent = groupData.recipe;
+          recipeHeading.appendChild(recipeLink);
+        } else {
+          recipeHeading.textContent = groupData.recipe;
+        }
+        group.appendChild(recipeHeading);
+      }
 
       const list = document.createElement("ul");
-      for (const item of recipe.items) {
+      for (const item of groupData.items) {
         const li = document.createElement("li");
         li.textContent = item;
         list.appendChild(li);

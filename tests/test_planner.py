@@ -2,7 +2,7 @@ import random
 
 import pytest
 
-from mealplanner.models import load_meals
+from mealplanner.models import Meal, load_meals
 from mealplanner.planner import Config, filter_meals, reroll_meal, select_week
 
 from .fixtures import SAMPLE_YAML
@@ -36,6 +36,64 @@ def test_select_week_returns_requested_count(meals):
     assert {m.name for m in selection} == {"Tacos", "Veggie Bowl"}
 
 
+def test_select_week_includes_forced_meal_even_when_filters_exclude_it(meals):
+    selection = select_week(
+        meals,
+        Config(
+            num_meals=1,
+            include_proteins={"beef/poultry"},
+            leftovers_only=True,
+            forced_meals={"Veggie Bowl"},
+        ),
+        rng=random.Random(0),
+    )
+
+    assert [meal.name for meal in selection] == ["Veggie Bowl"]
+
+
+def test_select_week_raises_when_forced_meals_exceed_requested_count(meals):
+    with pytest.raises(ValueError, match="Too many forced meals"):
+        select_week(
+            meals,
+            Config(num_meals=1, forced_meals={"Tacos", "Veggie Bowl"}),
+            rng=random.Random(0),
+        )
+
+
+def test_select_week_respects_maximum_red_meat_meals(meals):
+    meals.extend(
+        [
+            Meal(name="Beef Dish", protein="beef"),
+            Meal(name="Pork Dish", protein="pork"),
+            Meal(name="Lamb Dish", protein="lamb"),
+            Meal(name="Chicken Dish", protein="chicken"),
+        ]
+    )
+
+    selection = select_week(
+        meals, Config(num_meals=3, max_red_meat_meals=1), rng=random.Random(0)
+    )
+
+    red_meat_count = sum(
+        meal.protein in {"beef", "beef/poultry", "pork", "lamb"} for meal in selection
+    )
+    assert red_meat_count <= 1
+
+
+def test_select_week_raises_when_forced_red_meat_exceeds_maximum(meals):
+    meals.append(Meal(name="Pork Dish", protein="pork"))
+    with pytest.raises(ValueError, match="forced red meat meals"):
+        select_week(
+            meals,
+            Config(
+                num_meals=1,
+                max_red_meat_meals=0,
+                forced_meals={"Pork Dish"},
+            ),
+            rng=random.Random(0),
+        )
+
+
 def test_select_week_raises_when_pool_too_small(meals):
     with pytest.raises(ValueError):
         select_week(meals, Config(num_meals=5), rng=random.Random(0))
@@ -61,6 +119,36 @@ def test_reroll_meal_raises_when_no_alternatives(meals):
             index=0,
             rng=random.Random(0),
         )
+
+
+def test_reroll_meal_cannot_replace_forced_meal(meals):
+    with pytest.raises(ValueError, match="forced meal"):
+        reroll_meal(
+            meals,
+            Config(num_meals=1, forced_meals={"Tacos"}),
+            [meals[0]],
+            index=0,
+            rng=random.Random(0),
+        )
+
+
+def test_reroll_meal_respects_maximum_red_meat_meals(meals):
+    meals.append(Meal(name="Pork Dish", protein="pork"))
+    meals.append(Meal(name="Chicken Dish", protein="chicken"))
+    selection = [meals[0], meals[1]]
+
+    rerolled = reroll_meal(
+        meals,
+        Config(num_meals=2, max_red_meat_meals=1),
+        selection,
+        index=1,
+        rng=random.Random(0),
+    )
+
+    red_meat_count = sum(
+        meal.protein in {"beef", "beef/poultry", "pork", "lamb"} for meal in rerolled
+    )
+    assert red_meat_count <= 1
 
 
 def test_reroll_meal_keeps_min_vegetarian_when_at_the_minimum(meals):

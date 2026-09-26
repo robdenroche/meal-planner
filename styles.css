@@ -26,6 +26,29 @@ fieldset label {
   margin: 0.25rem 0.75rem 0.25rem 0;
 }
 
+#forced-meals-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+}
+
+.config-divider {
+  border: 0;
+  border-top: 1px solid #8883;
+  margin: 1.5rem 0;
+}
+
+.forced-meal-option {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.forced-meal-option input {
+  flex: none;
+}
+
 #config-form > label {
   display: block;
   margin: var(--gap) 0;

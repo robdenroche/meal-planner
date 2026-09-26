@@ -421,7 +421,7 @@ Lemon-roasted Salmon with Escarole, Asparagus, and Potatoes:
   effort: weeknight
   protein: seafood
   leftovers: FALSE
-  vegetarian: TRUE
+  vegetarian: FALSE
 
 Red Wine-braised Chicken with Chorizo and Chickpeas:
   recipe: https://cooked.wiki/saved/333c8d83-4698-4b75-a6d7-b351b5b1a143

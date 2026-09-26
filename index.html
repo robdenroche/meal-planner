@@ -37,11 +37,21 @@
 
         <label>
           Minimum vegetarian meals
-          <input type="number" id="min-vegetarian" min="0" value="0" />
+          <input type="number" id="min-vegetarian" min="0" value="1" />
+        </label>
+        <label>
+          Maximum red meat meals
+          <input type="number" id="max-red-meat-meals" min="0" max="14" value="1" />
         </label>
         <label>
           <input type="checkbox" id="leftovers-only" /> Must have leftovers
         </label>
+
+        <hr class="config-divider" aria-hidden="true" />
+        <fieldset id="forced-meals-fieldset">
+          <legend>Always include (overrides filters)</legend>
+          <div id="forced-meals-list"></div>
+        </fieldset>
 
         <button type="submit">Generate week</button>
       </form>

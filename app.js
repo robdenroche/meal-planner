@@ -73,6 +73,12 @@ def _config_from_json(config_json):
         efforts=set(d["efforts"]) if d.get("efforts") else None,
         min_vegetarian=d.get("min_vegetarian", 0),
         leftovers_only=bool(d.get("leftovers_only")),
+        forced_meals=set(d.get("forced_meals") or []),
+        max_red_meat_meals=(
+          int(d["max_red_meat_meals"])
+          if d.get("max_red_meat_meals") is not None
+          else None
+        ),
     )
 
 
@@ -81,6 +87,7 @@ def available_options():
         {
             "efforts": sorted({m.effort for m in meals if m.effort}),
             "proteins": sorted({m.protein for m in meals if m.protein}),
+          "meals": [{"name": m.name, "recipe": m.recipe} for m in meals],
         }
     )
 
@@ -118,11 +125,42 @@ function buildCheckboxGroup(fieldset, name, values) {
   }
 }
 
+function buildForcedMealList(container, meals) {
+  container.replaceChildren();
+  const sortedMeals = [...meals].sort((first, second) =>
+    first.name.localeCompare(second.name, undefined, { sensitivity: "base" }),
+  );
+  for (const meal of sortedMeals) {
+    const label = document.createElement("label");
+    label.className = "forced-meal-option";
+
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.name = "forced-meal";
+    input.value = meal.name;
+    label.appendChild(input);
+
+    if (meal.recipe) {
+      const link = document.createElement("a");
+      link.href = meal.recipe;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = meal.name;
+      label.appendChild(link);
+    } else {
+      label.append(meal.name);
+    }
+
+    container.appendChild(label);
+  }
+}
+
 function checkedValues(name) {
   return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map((el) => el.value);
 }
 
 function readConfigFromForm() {
+  const maxRedMeatMeals = document.getElementById("max-red-meat-meals").value;
   return {
     num_meals: Number(document.getElementById("num-meals").value),
     efforts: checkedValues("effort").length ? checkedValues("effort") : null,
@@ -130,6 +168,9 @@ function readConfigFromForm() {
     exclude_proteins: checkedValues("exclude-protein"),
     min_vegetarian: Number(document.getElementById("min-vegetarian").value),
     leftovers_only: document.getElementById("leftovers-only").checked,
+    forced_meals: checkedValues("forced-meal"),
+    max_red_meat_meals:
+      maxRedMeatMeals === "" ? null : Number(maxRedMeatMeals),
   };
 }
 
@@ -152,7 +193,12 @@ function renderMealCard(meal, index) {
     ${recipeLink}
     <button type="button" data-index="${index}">Reroll</button>
   `;
-  li.querySelector("button").addEventListener("click", () => handleReroll(index));
+  const rerollButton = li.querySelector("button");
+  if (checkedValues("forced-meal").includes(meal.name)) {
+    rerollButton.disabled = true;
+    rerollButton.title = "Uncheck this meal to allow re-rolling it";
+  }
+  rerollButton.addEventListener("click", () => handleReroll(index));
   return li;
 }
 
@@ -253,6 +299,7 @@ async function init() {
   buildCheckboxGroup(document.getElementById("effort-fieldset"), "effort", options.efforts);
   buildCheckboxGroup(document.getElementById("include-protein-fieldset"), "include-protein", options.proteins);
   buildCheckboxGroup(document.getElementById("exclude-protein-fieldset"), "exclude-protein", options.proteins);
+  buildForcedMealList(document.getElementById("forced-meals-list"), options.meals);
 
   document.getElementById("config-form").addEventListener("submit", handleGenerate);
   document.getElementById("back-to-config").addEventListener("click", () => showView(configView));

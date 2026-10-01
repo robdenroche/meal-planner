@@ -526,5 +526,322 @@ Lentil Soup with Spicy Italian Sausage:
   leftovers: TRUE
   vegetarian: FALSE
 
+Turkey Burgers:
+  recipe: https://cooked.wiki/saved/72236489-b920-47af-9af5-12d5dd546f78
+  ingredients:
+    - ground turkey
+    - spinach
+    - onion
+    - mayo
+    - garlic
+    - burger buns
+    - mozzarella cheese
+    - lettuce
+    - hot peppers in oil
+  pantry:
+    - bread crumbs
+    - worcestershire sause
+    - black pepper
+  effort: weekend
+  protein: poultry
+  leftovers: TRUE
+  vegetarian: FALSE
 
+Black Bean Burgers:
+  recipe: https://cooked.wiki/saved/a3293506-86a9-408f-8e1c-f1a970f36f98
+  ingredients:
+    - garlic
+    - black beans
+    - egg
+    - cheese
+    - burger buns
+  pantry:
+    - salt
+    - onion powder
+    - black pepper
+    - flour
+    - cornmeal
+    - olive oil
+  effort: weeknight
+  protein: legume
+  leftovers: TRUE
+  vegetarian: TRUE
+
+Coconut-Apple-Ginger Dal:
+  recipe: https://cooked.wiki/saved/7c839f44-4460-4c8a-9970-4d977334ff41
+  ingredients:
+    - onion
+    - garlic
+    - ginger
+    - apple
+    - red lentils
+    - coconut milk
+    - lime
+    - cilantro
+    - coconut flakes
+  pantry:
+    - coconut oil
+    - cayenne
+    - cumin
+    - tumeric
+    - salt
+    - black pepper
+  effort: weeknight
+  protien: legume
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Roasted Sausage with Broccoli and Fennel:
+  recipe: https://cooked.wiki/saved/09fd7a0d-b247-4220-90f0-815d3b6b13aa
+  ingredients:
+    - sausage
+    - broccoli
+    - fennel
+    - whole-grain mustard
+    - lemon
+  pantry:
+    - salt
+    - black pepper
+    - olive oil
+    - aleppo pepper
+  effort: weeknight
+  protein: pork
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Coconut Green Curry with Mushrooms and Chickpeas:
+  recipe: https://cooked.wiki/saved/cb4fc421-e5f3-40a3-aaef-e85022eea865
+  ingredients:
+    - cilantro
+    - ginger
+    - garlic
+    - shallots
+    - jalapenos
+    - lime
+    - bok choy or cabbage
+    - shiitake mushrooms
+    - chickpeas
+    - coconut milk
+    - rice noodles
+    - peanuts
+  pantry:
+    - brown sugar
+    - coriander
+    - salt
+    - vegetable oil
+  effort: weekend
+  protein: legume
+  leftovers: TRUE
+  vegetarian: TRUE
+
+Crunchy Veg Bowl with Warm Peanut Sauce:
+  recipe: https://cooked.wiki/saved/8d002615-6255-47cd-85b2-a59127d04edc
+  ingredients:
+    - thai chiles
+    - garlic
+    - coconut milk
+    - lime
+    - eggs
+    - cabbage
+    - green onion
+    - golden baugette
+    - celery
+    - cucumber
+    - bean sprouts
+    - cilantro
+    - mint
+    - peanuts
+  pantry:
+    - peanut butter
+    - soy sauce
+    - fish sauce
+    - salt
+    - brown rice
+  effort: weekend
+  protein: egg
+  leftovers: TRUE
+  vegetarian: TRUE
+
+Shrimp Scampi Pasta:
+  recipe: https://cooked.wiki/saved/16342bc4-455e-4559-b09b-2b1514a5f73f
+  ingredients:
+    - shrimp
+    - onion
+    - garlic
+    - lemon
+    - parsley
+    - dry white wine
+    - fettuccine
+  pantry:
+    - salt
+    - panko
+    - olive oil
+    - butter
+    - red pepper flakes
+  effot: weeknight
+  protein: seafood
+  leftovers: FALSE
+  vegetarian: FALSE
+
+Oven Risotto with Mushrooms:
+  recipe: https://cooked.wiki/saved/cb735845-c5a0-4304-bfd4-a09bfa8419eb
+  ingredients:
+    - mixed mushrooms
+    - garlic
+    - thyme
+    - onion
+    - arborio rice
+    - dry vermouth/white wine
+    - chicken stock
+    - lemon
+    - parsley
+  pantry:
+    - red pepper flakes
+    - olive oil
+    - salt
+    - black pepper
+    - parmesan
+    - butter
+  effort: weekend
+  protein: dairy
+  leftovers: TRUE
+  vegetarian: TRUE
+
+Grilled Mahi-mahi Tacos:
+  recipe: https://cooked.wiki/saved/983ac4b4-976a-4879-9a7a-704aefca2857
+  ingredients:
+    - heavy cream
+    - sour cream
+    - mahi-mahi fillet
+    - tortillas
+    - cabbage
+    - lime
+  pantry:
+    - salt
+    - black pepper
+    - hot sauce
+    - oregano
+    - thyme
+    - garlic powder
+    - onion powder
+    - cayenne
+    - vegetable oil
+  effort: weeknight
+  protein: seafood
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Spaghetti with Brussels Sprouts, Pancetta, and Hazelnuts:
+  recipe: https://cooked.wiki/saved/25fc43b2-2223-444c-b85e-d69196e678da
+  ingredients:
+    - pancetta
+    - garlic
+    - brussel sprouts
+    - parmesan
+    - lemon
+    - spaghetti
+    - hazelnuts
+  pantry:
+    - salt
+    - olive oil
+    - red pepper flakes
+    - black pepper
+  effort: weeknight
+  protein: pork
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Crispy Tofu with Maple-soy Glaze:
+  recipe: https://cooked.wiki/saved/63bff11b-9a67-4b58-b16e-f18112dc4193
+  ingredients:
+    - tofu
+    - ginger
+    - green onion
+    - daikon
+  pantry:
+    - soy sauce
+    - maple syrup
+    - rice vinegar
+    - red pepper flakes
+    - vegetable oil
+    - kimchi
+    - sesame seeds
+    - rice
+  effort: weeknight
+  protein: legume
+  leftovers: TRUE
+  vegetarian: TRUE
+
+Pad Thai:
+  recipe: https://cooked.wiki/saved/e2b381f2-5164-4f72-aebd-927f3941f8f0
+  ingredients:
+    - rice noodles
+    - garlic
+    - chicken
+    - shrimp
+    - tofu
+    - eggs
+    - bean sprouts
+    - red bell pepper
+    - green onion
+    - peanuts
+    - lime
+    - cilantro
+  pantry:
+    - fish sauce
+    - soy sauce
+    - brown sugar
+    - rice vinegar
+    - sriracha
+    - peanut butter
+  effort: weeknight
+  protein: poultry
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Pumpkin Chili:
+  recipe: https://cooked.wiki/saved/66899814-1db0-40c6-b992-33647f4ac20b
+  ingredients:
+    - ground beef
+    - onion
+    - red bell pepper
+    - garlic
+    - canned fire-roasted tomatoes
+    - kidney beans
+    - black beans
+    - pumpkin puree
+    - chicken broth
+  pantry:
+    - olive oil
+    - cumin
+    - chili powder
+    - salt
+    - black pepper
+    - cinnamon
+    - cheddar cheese
+  effort: weekend
+  protein: beef
+  leftovers: TRUE
+  vegetarian: FALSE
+
+Chicken in a Pot with Lemon Orzo:
+  recipe: https://cooked.wiki/saved/8b218339-5e0b-4277-83cc-f5af2315669a
+  ingredients:
+    - whole chicken
+    - garlic
+    - carrots
+    - lemon
+    - leeks
+    - orzo
+    - parsley
+  pantry:
+    - olive oil
+    - dried tarragon/thyme
+    - salt
+    - red pepper flakes
+    - parmesan
+  effort: weekend
+  protein: poultry
+  leftovers: TRUE
+  vegetarian: FALSE
 
